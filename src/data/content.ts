@@ -2,13 +2,13 @@ const img = (id: string) =>
   `https://image.qwenlm.ai/generated-images/${id}/_result.png`;
 
 export const IMAGES = {
-  portrait: img("d2ede55e-1af0-4d97-b445-e507e796f8fc"),
-  pulse: img("6bebccba-ac38-4fb0-8c2e-3a3e3995f8ad"),
-  orrery: img("fcde9ab1-bb70-473b-97c8-d7804c718c1b"),
-  atlas: img("2ae9b6a6-bb63-4d89-ac54-16bd5afe9002"),
-  echo: img("d729b073-9ed9-4562-90dd-327f088a57c5"),
-  ledger: img("5604d8f3-95fa-49c3-9caa-f3035ecc3088"),
-  bloom: img("e6d037a0-fde4-4653-998a-ef0cc6e05fd0"),
+  portrait: img("3360eaed-238b-44dd-b55e-45f7e26acd9f"),
+  pulse: img("6b7bf50a-5e5d-4c3d-bbe2-a297df34d79d"),
+  orrery: img("33b85522-6d1a-4978-9c6b-d2a351398c0d"),
+  atlas: img("f625f0c7-c6f6-49ce-a7ed-4aede8042b8e"),
+  echo: img("75c425ca-e862-4265-97e3-da0598c77483"),
+  ledger: img("91604da5-9112-4e59-a47b-7c66bb8ab3bd"),
+  bloom: img("4fbd5b60-f05d-4340-94a5-4598de8af149"),
 };
 
 export const EMAIL = "hello@aaron.dev";

@@ -287,3 +287,98 @@ body {
     transform: none;
   }
 }
+
+/* ———————————————— custom cursor ———————————————— */
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  pointer-events: none;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-fog);
+  mix-blend-mode: difference;
+}
+.cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--color-fog);
+  mix-blend-mode: difference;
+  transition:
+    opacity 0.4s ease,
+    width 0.35s var(--ease-expo),
+    height 0.35s var(--ease-expo),
+    border-color 0.35s ease;
+}
+.cursor-ring.is-active {
+  width: 58px;
+  height: 58px;
+  border-color: var(--color-ultra);
+}
+.cursor-dot.is-active {
+  width: 3px;
+  height: 3px;
+}
+
+/* ———————————————— reverse marquee ———————————————— */
+
+@keyframes marquee-rev {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.marquee-track-rev {
+  display: flex;
+  width: max-content;
+  animation: marquee-rev 40s linear infinite;
+}
+.marquee:hover .marquee-track-rev {
+  animation-play-state: paused;
+}
+
+/* ———————————————— entrances ———————————————— */
+
+@keyframes overlay-in {
+  from {
+    opacity: 0;
+  }
+}
+.overlay-in {
+  animation: overlay-in 0.45s ease both;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+.rise-in {
+  animation: rise-in 0.7s var(--ease-expo) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+  .marquee-track-rev {
+    animation: none !important;
+  }
+  .overlay-in,
+  .rise-in {
+    animation: none !important;
+  }
+}
